@@ -1,0 +1,39 @@
+{
+  "name": "gulp-tree-concat",
+  "version": "0.1.0",
+  "description": "Gulp processor to merge multiple javascript files into one with hierarchy",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/timnew/gulp-tree-concat.git"
+  },
+  "keywords": [
+    "gulp",
+    "gulpplugin",
+    "concat",
+    "tree",
+    "template",
+    "build"
+  ],
+  "author": {
+    "name": "timnew",
+    "email": "timnew.wti@gmail.com",
+    "url": "https://timnew.github.io"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "bugs": {
+    "url": "https://github.com/timnew/gulp-tree-concat/issues"
+  },
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "coffee-script": "~1.7.1",
+    "through2": "~0.5.1",
+    "gulp-util": "~2.2.20"
+  }
+}
