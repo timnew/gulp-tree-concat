@@ -5,7 +5,7 @@ gulp-tree-concat [![NPM version][npm-image]][npm-url] [![Build Status][ci-image]
 
 ## Install
 
-Install using [npm](https://npmjs.org/package/gulp-tree-concat).
+Install using [npm][npm-url].
 
     $ npm install gulp-tree-concat
 
