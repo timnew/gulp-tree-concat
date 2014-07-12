@@ -1,7 +1,6 @@
 require('./spec_helper')
 
 fakeFs = require('./FakeVinylFs')
-runInSanbox = require('./sanboxRunner')
 
 describe 'concat javascript', ->
   describe 'basic', ->
@@ -24,7 +23,7 @@ describe 'concat javascript', ->
           concatedJs = folder['concat.js']        
 
           try
-            context = runInSanbox concatedJs
+            context = Sanbox.run concatedJs
 
             context.Templates.should.be.ok
             context.Templates.should.has.keys 'a','b','c'
@@ -54,7 +53,7 @@ describe 'concat javascript', ->
           concatedJs = folder['concat.js']
 
           try
-            context = runInSanbox concatedJs
+            context = Sanbox.run concatedJs
 
             context.Templates.should.be.ok
             context.Templates.should.has.keys 'f/a', 'f/f1/b', 'c'
@@ -84,7 +83,7 @@ describe 'concat javascript', ->
           concatedJs = folder['concat.js']
 
           try
-            context = runInSanbox concatedJs
+            context = Sanbox.run concatedJs
 
             context.Templates.should.be.ok
             context.Templates.should.has.keys 'f', 'c'
