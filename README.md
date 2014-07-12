@@ -1,4 +1,4 @@
-gulp-tree-concat
+gulp-tree-concat [![NPM version][npm-image]][npm-url] [![Build Status][ci-image]][ci-url] [![Dependency Status][depstat-image]][depstat-url]
 ================
 
 > A [Gulp](http://gulpjs.com/) processor to merge multiple javascript files into one with hierarchy
@@ -22,7 +22,7 @@ gulp.task('template', function () {
       output: 'template.js',
       namespace: 'Views.JadeTemplates',
       hierarchy: true,
-      pathTemplate: treeConcat.path.relative('client/templates/')
+      nameTemplate: treeConcat.nameTemplates.relative('client/templates/')
     })
     .pipe(gulp.dest('public/assets'));
 });
@@ -66,21 +66,55 @@ Type `String`, default to `/`
 > Since the value is used in `RegExp`, please escape it when necessary.
 > Will be ignored if `hierarchy` is set to `false`
 
-### pathTemplate
-Type `[RegExp, String]`, default to `[/.*/g, '$&']`
-> The template to extract template name from template full path. First one is the `RegExp` to match the full path, the second one is used to construct the template name.
-> Follow the same rule as described in [`String.prototype.match`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+### nameTemplate
+Type `function(File)`, `(File) -> node name` Mapping, default to `treeConcat.path.none`
+> The function to build the name for a file, usually the name is exctract from file name. But also could be extract from `contents` if necessary
 
-To simplify the usage, there are 2 template builder methods available:
+Several predefined builder are included:
 
-#### `treeConcat.path.relative(baseFolder, extname = '.js')`
+### `treeConcat.nameTemplates.fullpath()`
 
-> Extract the the relative path based on `basedFolder`, extension name will be removed.
+> Extract the file full path as template name
+> `/folder/file.js` will be mapped to `/folder/file.js`
 
-#### `treeConcat.path.filename(baseFolder, extname = '.js')`
+#### `treeConcat.nameTemplates.filename(removeExtension = true)`
 
-> Extract the the plain file name, extension name will be removed.  
+> Extract the file name as template name, extension name can be removed
+> `/folder/file.js` will be mapped to `file`
+
+**Parameters**
+
+* **removeExtension**  controls how the extension is removed
+  * **true** the extensions are removed
+  * **false** the exensions are reserved
+  * **'.js'** only the extensions matched are removed
+
+#### `treeConcat.nameTemplates.relative(baseFolder, removeExtension = true)`
+
+> Extract the the relative path based on `basedFolder`, extension name can be removed
+> `/folder/subfolder/file.js` will be mapped to `subfolder/file`
+
+**Parameters**
+
+* **baseFolder** the relative path that you want to remove from name
+
+* **removeExtension**  controls how the extension is removed
+  * **true** the extensions are removed
+  * **false** the exensions are reserved
+  * **'.js'** only the extensions matched are removed
+
 
 ## License
 MIT
 
+[![NPM downloads][npm-downloads]][npm-url]
+
+[npm-url]: https://npmjs.org/package/gulp-tree-concat
+[npm-image]: http://img.shields.io/npm/v/gulp-tree-concat.svg?style=flat
+[npm-downloads]: http://img.shields.io/npm/dm/gulp-tree-concat.svg?style=flat
+
+[ci-url]: http://travis-ci.org/timnew/gulp-tree-concat
+[ci-image]: http://img.shields.io/travis/timnew/gulp-tree-concat.svg?style=flat
+
+[depstat-url]: https://gemnasium.com/timnew/gulp-tree-concat
+[depstat-image]: http://img.shields.io/gemnasium/timnew/gulp-tree-concat.svg?style=flat
