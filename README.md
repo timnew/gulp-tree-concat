@@ -43,6 +43,10 @@ will now be accessible as precompiled [jade](http://jade-lang.com/) precompiled 
 
 (Please note that `gulp-tree-concat` only take cares to concat the compiled template, the jade template compiling is done by `gulp-jade`. And `gulp-tree-concat` doesn't have to be used in conjunction with `gulp-jade`. Any javascript files will do.)
 
+### Sample Output
+
+** TODO **
+
 ## Options
 
 ### output
