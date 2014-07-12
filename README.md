@@ -113,8 +113,8 @@ MIT
 [npm-image]: http://img.shields.io/npm/v/gulp-tree-concat.svg?style=flat
 [npm-downloads]: http://img.shields.io/npm/dm/gulp-tree-concat.svg?style=flat
 
-[ci-url]: http://travis-ci.org/timnew/gulp-tree-concat
-[ci-image]: http://img.shields.io/travis/timnew/gulp-tree-concat.svg?style=flat
+[ci-url]: https://drone.io/github.com/timnew/gulp-tree-concat/latest
+[ci-image]: https://drone.io/github.com/timnew/gulp-tree-concat/status.png
 
 [depstat-url]: https://gemnasium.com/timnew/gulp-tree-concat
 [depstat-image]: http://img.shields.io/gemnasium/timnew/gulp-tree-concat.svg?style=flat
