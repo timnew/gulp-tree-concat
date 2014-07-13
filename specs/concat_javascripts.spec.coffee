@@ -46,7 +46,7 @@ describe 'concat javascript', ->
       fs.createReadStream()
         .pipe treeConcat
           output: 'concat.js'        
-          pathTemplate: treeConcat.nameTemplates.relative(process.cwd(), true)
+          pathTemplate: treeConcat.nameTemplates.relative()
         .pipe fs.createWriteStream()
         .onFinished done, (folder) ->
           concatedJs = folder['concat.js']
@@ -73,7 +73,7 @@ describe 'concat javascript', ->
         .pipe treeConcat
           output: 'concat.js'     
           hierarchy: true   
-          pathTemplate: treeConcat.nameTemplates.relative(process.cwd(), true)
+          pathTemplate: treeConcat.nameTemplates.relative()
         .pipe fs.createWriteStream()
         .onFinished done, (folder) ->
           concatedJs = folder['concat.js']
