@@ -44,6 +44,7 @@
     "readable-stream": "^1.0.27-1",
     "sandbox-runner": "^0.1.0",
     "vinyl": "^0.2.3",
+    "vinyl-fs-mock": "^0.1.0",
     "yargs": "^1.2.6"
   }
 }
