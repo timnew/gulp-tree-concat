@@ -22,7 +22,7 @@ gulp.task('template', function () {
       output: 'template.js',
       namespace: 'Views.JadeTemplates',
       hierarchy: true,
-      nameTemplate: treeConcat.nameTemplates.relative('client/templates/')
+      pathTemplate: treeConcat.nameTemplates.relative('client/templates/')
     })
     .pipe(gulp.dest('public/assets'));
 });
@@ -70,7 +70,7 @@ Type `String`, default to `/`
 > Since the value is used in `RegExp`, please escape it when necessary.
 > Will be ignored if `hierarchy` is set to `false`
 
-### nameTemplate
+### pathTemplate
 Type `function(File)`, `(File) -> node name` Mapping, default to `treeConcat.path.none`
 > The function to build the name for a file, usually the name is exctract from file name. But also could be extract from `contents` if necessary
 
